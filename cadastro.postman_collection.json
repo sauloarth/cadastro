@@ -1,0 +1,109 @@
+{
+	"info": {
+		"_postman_id": "ed380e7a-3afb-412a-a373-2f8688e32861",
+		"name": "cadastro",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29656431"
+	},
+	"item": [
+		{
+			"name": "Listar clientes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/clientes?sort=nascimento",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"clientes"
+					],
+					"query": [
+						{
+							"key": "sort",
+							"value": "nascimento",
+							"description": "sort por nome, nascimento ou cpf (insira hifen antes da propriedade para ordem descendente)"
+						},
+						{
+							"key": "limit",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "page",
+							"value": "3",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar cliente",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/cliente?cpf=47040935066",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cliente"
+					],
+					"query": [
+						{
+							"key": "cpf",
+							"value": "47040935066"
+						},
+						{
+							"key": "nome",
+							"value": "Saulo Reis",
+							"disabled": true
+						},
+						{
+							"key": "nascimento",
+							"value": "1993-12-28",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar cliente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"Paulo Carlos\",\n    \"nascimento\": \"1993-12-28\",\n    \"cpf\": \"470.409.350-66\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/cliente",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cliente"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
